@@ -21,14 +21,23 @@
                     placeholder="Write your item here...">
                 <button id="submit-btn" class="btn btn-primary">Add to list</button>
                 <h1 class="text-3xl text-green-400 font-bold pt-5 border-b-2 border-black">Here is your items...</h1>
-                <div class="text-3xl font-bold text-yellow-300 pt-3 parent">
-                    <ol id="container"></ol>
+                <div id="parent" class="text-3xl font-bold text-yellow-300 pt-3">
+                    <ol id="container">
+                        <li>AlgoWebBot</li>
+                    </ol>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+
+        // Deligate parent
+        const parenDiv = document.querySelector('#parent');
+        parenDiv.addEventListener('click', (e)=>{
+            e.target.parentNode.removeChild(e.target);
+        })
+
         // where to add
         const container = document.querySelector('#container')
         // btn
@@ -39,16 +48,9 @@
             const newItem = document.createElement('li');
             newItem.innerText = item;
             container.appendChild(newItem);
-            inputSpace();
+            document.querySelector('#item').value = '';
         })
-
-        function inputSpace(){
-            const item = document.querySelector('#item').value = '';
-        }
 
     </script>
 </body>
 </html>
-<!-- const newItem = document.createElement('li'); -->
-<!-- newItem.innerText = 'Hello'; -->
-<!-- <i id="delete" class="fa-solid fa-delete-left text-red-400 pl-10"></i> -->
