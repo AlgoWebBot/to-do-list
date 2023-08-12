@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/21a3ce7507.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero min-h-screen"
+        style="background-image: url('./images/to-do-bg.jpg');">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-5xl text-yellow-300 font-bold">Hello there</h1>
+                <p class="mb-5 text-lg text-green-400">We can add your to do list or some important topics. Also you can add here your choice list</p>
+                <input type="text" id="item" class="h-10 w-72 rounded-md text-black text-center p-2 bg-gray-200"
+                    placeholder="Write your item here...">
+                <button id="submit-btn" class="btn btn-primary">Add to list</button>
+                <h1 class="text-3xl text-green-400 font-bold pt-5 border-b-2 border-black">Here is your items...</h1>
+                <div class="text-3xl font-bold text-yellow-300 pt-3 parent">
+                    <ol id="container"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // where to add
+        const container = document.querySelector('#container')
+        // btn
+        const btn = document.querySelector('#submit-btn')
+        btn.addEventListener('click', ()=>{
+            const item = document.querySelector('#item').value;
+            // what to add
+            const newItem = document.createElement('li');
+            newItem.innerText = item;
+            container.appendChild(newItem);
+            inputSpace();
+        })
+
+        function inputSpace(){
+            const item = document.querySelector('#item').value = '';
+        }
+
+    </script>
+</body>
+</html>
+<!-- const newItem = document.createElement('li'); -->
+<!-- newItem.innerText = 'Hello'; -->
+<!-- <i id="delete" class="fa-solid fa-delete-left text-red-400 pl-10"></i> -->
