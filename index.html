@@ -25,7 +25,9 @@
                 <button id="submit-btn" class="btn btn-primary">Add to list</button>
                 <h1 class="text-3xl text-green-400 font-bold pt-5 border-b-2 border-black">Here is your items...</h1>
                 <div id="parent" class="text-3xl font-bold text-yellow-300 pt-3">
-                    <ol id="container"></ol>
+                    <ol id="container">
+                        
+                    </ol>
                 </div>
             </div>
         </div>
@@ -47,9 +49,15 @@
             const item = document.querySelector('#item').value;
             // what to add
             const newItem = document.createElement('li');
-            newItem.innerText = item;
+            // newItem.innerText = item;
+            // container.appendChild(newItem);
+            // document.querySelector('#item').value = '';
+
+            newItem.innerHTML = `
+                <li> ${item} <i class="fa-solid fa-trash"></i> </li>
+            `
+            // console.log(newItem);
             container.appendChild(newItem);
-            document.querySelector('#item').value = '';
         })
 
     </script>
