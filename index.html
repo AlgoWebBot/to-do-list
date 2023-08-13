@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="hero min-h-screen"
-        style="background-image: url('./images/to-do-bg.jpg');">
+        style="background-image: url('./images/kelly-sikkema--1_RZL8BGBM-unsplash.jpg');">
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-md">
@@ -32,7 +32,6 @@
             </div>
         </div>
     </div>
-
     <script>
 
         // Deligate parent => Delete item;
@@ -48,7 +47,7 @@
         btn.addEventListener('click', ()=>{
             const item = document.querySelector('#item').value;
             // what to add
-            const newItem = document.createElement('li');
+            const newItem = document.createElement('div');
             // newItem.innerText = item;
             // container.appendChild(newItem);
             // document.querySelector('#item').value = '';
@@ -58,6 +57,7 @@
             `
             // console.log(newItem);
             container.appendChild(newItem);
+            document.querySelector('#item').value = '';
         })
 
     </script>
